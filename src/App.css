@@ -1,0 +1,54 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body, #root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: hotpink;
+  transition: all 300ms;
+}
+
+.button{
+  border: none;
+  background:none;
+  appearance: none;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  margin: 1rem;
+  border: 2px solid hotpink;
+  box-shadow: 2px 2px 0 pink;
+  cursor: pointer;
+}
+
+.list {
+  border: 5px solid hotpink;
+  box-shadow: 5px 5px 0 pink;
+  padding: 1rem;
+  min-width: 20rem;
+}
+
+.list li {
+  list-style-type: none;
+  margin: 1rem;
+  padding: 1rem;
+  color: #444;
+  text-align: center;
+  border: 2px solid hotpink;
+  box-shadow: 2px 2px 0 pink;
+}
+
+.hide {
+  opacity: 0;
+  transform: translateX(100%) rotate(180deg);
+}
