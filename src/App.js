@@ -1,5 +1,19 @@
 import React, { Component } from 'react';
+import posed from 'react-pose';
 import './App.css';
+
+const Box = posed.div({
+  visible: { 
+    opacity: 1,
+    translateX: "0%",
+    rotate: "0deg"
+  },
+  hidden: {
+    opacity: 0,
+    translateX: "100%",
+    rotate: "180deg"
+  }
+});
 
 class App extends Component {
 
@@ -13,7 +27,7 @@ class App extends Component {
     // This is an async function, optional callback will be
     // called when the state has changed, this will log 'hello'
     // when we know that state has changed
-    this.setState({ toggle: !this.state.toggle }, this.logMe);
+    this.setState({ toggle: !this.state.toggle });
   }
 
   handleClick = () => {
@@ -35,14 +49,12 @@ class App extends Component {
     return (
       <div>
         <p>{ this.state.counter }</p>
-        <button className="button" disabled={this.state.counter > 10}
-          onClick={this.handleToggle}
-        > 
+        <button className="button" onClick={this.handleToggle}> 
           Toggle me 
         </button>
-        <div className={classes}> 
-            Now You see me 
-        </div>
+        <Box className="box" pose={this.state.toggle ? 'hidden' : 'visible'}>
+          Hello
+        </Box>
       </div>
     );
   }
