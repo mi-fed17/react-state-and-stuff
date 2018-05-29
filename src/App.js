@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import posed from 'react-pose';
 import List from './List';
+import Main from './Main';
 import './App.css';
 
 const Box = posed.div({
@@ -15,6 +16,8 @@ const Box = posed.div({
     rotate: "180deg"
   }
 });
+
+
 
 class App extends Component {
 
@@ -35,28 +38,10 @@ class App extends Component {
     this.setState({ counter: this.state.counter + 1});
   }
 
-  logMe = () => {
-    console.log("Hello");
-  }
-
   render() {
-    // classes will be either 'box hide' or 'box'
-    // Render will run every time state is changed
-    // Every transition is based on css
-    let classes = 'box ';
-    if(!this.state.toggle){
-      classes += 'hide';
-    }
     return (
       <div>
-        <p>{ this.state.counter }</p>
-        <button className="button" onClick={this.handleToggle}> 
-          Toggle me 
-        </button>
-        <Box className="box" pose={this.state.toggle ? 'hidden' : 'visible'}>
-          Hello
-        </Box>
-        <List />
+        <Main />
       </div>
     );
   }
