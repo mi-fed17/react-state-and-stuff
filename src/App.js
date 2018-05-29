@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import posed from 'react-pose';
+import List from './List';
 import './App.css';
 
 const Box = posed.div({
@@ -55,6 +56,7 @@ class App extends Component {
         <Box className="box" pose={this.state.toggle ? 'hidden' : 'visible'}>
           Hello
         </Box>
+        <List />
       </div>
     );
   }
